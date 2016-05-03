@@ -1,0 +1,61 @@
+.navbar {
+  margin-bottom: 0;
+  transition: all 0.25s ease-in-out;
+    
+  &.transparent {
+    background: transparent;
+    border: none;
+  
+    a {
+      color: pink;
+      
+      &:hover, &:hover:focus {
+        background: rgba(238, 238, 238, 0.2);
+      }
+      &:focus {
+        background: none;
+      }
+    }
+  }
+
+  &.white {
+    background: #fff;
+    border-bottom: 2px solid green;
+    
+    a {
+      color: green;
+      
+      &:hover, &:hover:focus {
+        background: #eee;
+      }
+      &:focus {
+        background: none;
+      }
+    }
+  }
+}
+
+.jumbotron.top-section {
+  padding-top: 100px;
+  color: pink;
+  background: #000;
+  background: image_url('photo.jpg') center center #000;
+  background-size: cover;
+  position: relative;
+  
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.5;
+  }
+  
+  .container {
+    position: relative;
+  }
+}
