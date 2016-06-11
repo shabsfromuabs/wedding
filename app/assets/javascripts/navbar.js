@@ -1,7 +1,7 @@
 var navbar = $('.navbar');
 
 function setNavBarClass() {
-  if ($(window).scrollTop() > 10) {
+  if ($(window).scrollTop() > 100) {
     navbar.addClass('white');
   }
   else {

@@ -1,0 +1,98 @@
+.navbar.wedding-header {
+  margin-bottom: 0;
+  transition: all 0.25s ease-in-out;
+
+  a {
+    padding: 0 16px;
+    vertical-align: middle;
+    height: 70px;
+    line-height: 70px;
+    text-transform: uppercase;
+  }
+
+  a.navbar-brand {
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      height: 30px;
+      margin-right: 7px;
+    }
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 20px;
+      font-weight: 300;
+    }
+  }
+
+  ul li a {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &.transparent {
+    background: transparent;
+    border: none;
+
+    .visible-on-transparent {
+      display: inline-block;
+    }
+
+    .visible-on-white {
+      display: none;
+    }
+
+    a.navbar-brand {
+      color: $pink;
+    }
+
+    ul li a {
+      color: #fff;
+    }
+
+    a {
+      &:hover, &:hover:focus {
+        background: rgba(238, 238, 238, 0.2);
+      }
+      &:focus {
+        background: none;
+      }
+    }
+  }
+
+  &.white {
+    background: #fff;
+    border-bottom: 2px solid $dark-pink;
+    box-shadow: 0 3px 5px 0 rgba(255, 141, 152, 0.2);
+
+    .visible-on-transparent {
+      display: none;
+    }
+
+    .visible-on-white {
+      display: inline-block;
+    }
+
+    a.navbar-brand {
+      color: $dark-pink;
+    }
+
+    ul li a {
+      color: $dark-pink;
+
+      &.active {
+        border-bottom: 2px solid $pink;
+      }
+    }
+
+    a {
+      &:hover, &:hover:focus {
+        background: #eee;
+      }
+      &:focus {
+        background: none;
+      }
+    }
+  }
+}
