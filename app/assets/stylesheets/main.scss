@@ -1,14 +1,20 @@
+$pink: pink;
+
+body {
+  font-family: RobotoDraft, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 .navbar {
   margin-bottom: 0;
   transition: all 0.25s ease-in-out;
-    
+
   &.transparent {
     background: transparent;
     border: none;
-  
+
     a {
-      color: pink;
-      
+      color: $pink;
+
       &:hover, &:hover:focus {
         background: rgba(238, 238, 238, 0.2);
       }
@@ -20,11 +26,11 @@
 
   &.white {
     background: #fff;
-    border-bottom: 2px solid green;
-    
+    border-bottom: 2px solid $pink;
+
     a {
-      color: green;
-      
+      color: $pink;
+
       &:hover, &:hover:focus {
         background: #eee;
       }
@@ -36,14 +42,11 @@
 }
 
 .jumbotron.top-section {
-  padding-top: 100px;
-  color: pink;
+  padding-top: 350px;
+  color: $pink;
   background: #000;
-  background: image_url('photo.jpg') center center #000;
-  background-size: cover;
   position: relative;
-  
-  
+
   &:before {
     content: '';
     position: absolute;
@@ -53,9 +56,29 @@
     right: 0;
     background: #000;
     opacity: 0.5;
+    z-index: 1;
   }
-  
+
+  .video-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+
+    img, video {
+      width: 100%;
+    }
+  }
+
   .container {
     position: relative;
+    z-index: 2;
   }
 }

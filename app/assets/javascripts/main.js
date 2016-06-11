@@ -1,12 +1,11 @@
-$(document).ready(function() {
-  var navbar = $('.navbar');
+var win = $(window);
 
-  $(window).scroll(function() {
-    if($(window).scrollTop() > 10) {
-      navbar.addClass('white');
-    }
-    else {
-      navbar.removeClass('white');
-    }
-  });
+win.load(function () {
+  //$('#cover-video')[0].play();
+});
+
+$(document).ready(function () {
+  fitVideoContainer();
+  win.scroll(setNavBarClass);
+  win.resize(debounce(fitVideoContainer, 100));
 });

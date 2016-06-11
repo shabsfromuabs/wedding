@@ -1,11 +1,39 @@
 doctype html
 html
   head
-    title Wedding
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    base href="/"
+    meta charset="utf-8"
+    title Весілля Артема і Наталі
+    meta name="description" content="Весільний сайт Артема і Наталі"
+    meta name="viewport" content="width=device-width, initial-scale=1"
     = csrf_meta_tags
-    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    /= favicon_link_tag '/favicons/apple-touch-icon-144x144-precomposed.png', rel: 'apple-touch-icon-precomposed', sizes: '144x144', type: 'image/png'
+    /= favicon_link_tag '/favicons/apple-touch-icon-114x114-precomposed.png', rel: 'apple-touch-icon-precomposed', sizes: '114x114', type: 'image/png'
+    /= favicon_link_tag '/favicons/apple-touch-icon-72x72-precomposed.png', rel: 'apple-touch-icon-precomposed', sizes: '72x72', type: 'image/png'
+    /= favicon_link_tag '/favicons/apple-touch-icon-57x57-precomposed.png', rel: 'apple-touch-icon-precomposed', sizes: '57x57', type: 'image/png'
+    = favicon_link_tag '/favicons/apple-touch-icon.png', rel: 'shortcut icon', type: 'image/png'
+
+    link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"
+    = stylesheet_link_tag 'application', media: 'all'
 
   body
     = yield
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
+    / Async fonts and styles loading
+    script
+      | var createLink = function(link) {
+      |   var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = link;
+      |   document.head.appendChild(l);
+      | };
+      | var registerLink = function(link) {
+      |   var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+      |   raf ? raf(function() { createLink(link); }) : window.addEventListener('load', function() { createLink(link); });
+      | };
+      | window.onload = function() {
+      |   registerLink('//fonts.googleapis.com/css?family=RobotoDraft:100,300,400,500,700,400italic');
+      |   registerLink('//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
+      | };
+
+    script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"
+    = javascript_include_tag 'application'
