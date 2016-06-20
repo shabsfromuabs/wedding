@@ -1,0 +1,207 @@
+.calendar {
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+
+  .presentation {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+  .day-presentation {
+    position: relative;
+    background: $dark-pink;
+    color: #fff;
+    min-height: 435px;
+    padding: 100px 15px 0 15px;
+    border-left: 20px solid $deep-dark-pink;
+
+    @media (max-width: 767px) {
+      padding: 25px 15px 15px 15px;
+      min-height: initial;
+    }
+
+    .current-day {
+      font-size: 50px;
+      font-weight: 200;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+
+    .sub-heading {
+      font-size: 10px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #fff;
+      margin-bottom: 10px;
+      font-weight: 300;
+    }
+
+    .point {
+      i.fa {
+        margin-right: 5px;
+        font-size: 26px;
+        line-height: 40px;
+      }
+
+      .text {
+        display: inline-block;
+        vertical-align: top;
+        line-height: 40px;
+        font-size: 16px;
+        font-weight: 300;
+
+        .time {
+          font-weight: 700;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .point-x {
+      .time {
+        display: inline-block;
+        font-weight: 100;
+        font-size: 26px;
+        width: 80px;
+        height: 40px;
+        vertical-align: top;
+      }
+
+      .text {
+        display: inline-block;
+        font-weight: 300;
+        font-size: 16px;
+        width: calc(100% - 80px);
+        min-height: 40px;
+        vertical-align: top;
+        line-height: 20px;
+        margin-bottom: 10px;
+
+        span {
+          display: table-cell;
+          vertical-align: middle;
+          height: 40px;
+        }
+      }
+    }
+  }
+
+  .month-presentation {
+    position: relative;
+    color: #808080;
+    padding: 100px 15px 0 15px;
+    text-align: center;
+    cursor: default;
+
+    .year {
+      font-size: 30px;
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-weight: 300;
+    }
+
+    .months-wrap {
+      padding: 0 15px;
+
+      @media (min-width: 992px) and (max-width: 1199px) {
+        padding: 0;
+      }
+
+      .month {
+        display: inline-block;
+        width: 8%;
+        padding: 10px 0;
+        margin: 0;
+        font-size: 10px;
+        text-transform: uppercase;
+        color: #ccc;
+
+        &.current {
+          width: 12%;
+          font-size: 15px;
+          font-weight: 500;
+          color: #808080;
+        }
+      }
+    }
+
+    .days-wrap, .weeks-days-wrap {
+      padding: 0 1%;
+
+      .week-day, .day {
+        display: inline-block;
+        width: 14%;
+        padding: 10px 0;
+        margin: 0;
+      }
+
+      .week-day {
+        text-transform: uppercase;
+        font-size: 16px;
+      }
+
+      .day {
+        position: relative;
+        cursor: pointer;
+
+        &.inactive {
+          color: #ccc;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 50%;
+          width: 30px;
+          height: 30px;
+          margin: 5px;
+          z-index: -1;
+
+          @media (min-width: 1200px) {
+            left: 4px;
+          }
+
+          @media (min-width: 992px) and (max-width: 1199px) {
+            left: -1px;
+          }
+
+          @media (min-width: 768px) and (max-width: 991px) {
+            left: 3px;
+          }
+        }
+
+        &:hover {
+          &:after {
+            background: #eee;
+          }
+        }
+
+        &.current {
+          color: #fff;
+          z-index: 1;
+
+          &:after {
+            width: 40px;
+            height: 40px;
+            margin: 0;
+            background: $dark-pink;
+          }
+
+          &:hover {
+            &:after {
+              background: $deep-dark-pink;
+            }
+          }
+        }
+      }
+    }
+  }
+}

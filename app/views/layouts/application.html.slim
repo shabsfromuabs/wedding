@@ -31,9 +31,10 @@ html
       |   raf ? raf(function() { createLink(link); }) : window.addEventListener('load', function() { createLink(link); });
       | };
       | window.onload = function() {
-      |   registerLink('//fonts.googleapis.com/css?family=RobotoDraft:100,300,400,500,700,400italic');
+      |   registerLink('//fonts.googleapis.com/css?family=RobotoDraft:100,300,400,500,700');
       |   registerLink('//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
       | };
 
     script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"
     = javascript_include_tag 'application'
+    script async="" defer=""src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9RZ0vIGrlqro5dshfjmRlfpNHPFQwl0E&callback=initMap"

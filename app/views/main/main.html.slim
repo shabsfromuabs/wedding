@@ -1,14 +1,14 @@
 header.navbar.navbar-fixed-top.transparent.wedding-header
   .container
     .navbar-header
-      a.navbar-brand(href="/")
+      a.navbar-brand.scroll-link(href="#")
         = image_tag 'logo-light.svg', class: 'visible-on-transparent'
         = image_tag 'logo-dark.svg', class: 'visible-on-white'
         span Артем і Наталя
 
     nav.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
-        li 
+        li
           a.scroll-link.visible-on-white(href="#") На початок
         li
           a.scroll-link(href="#place") Місце
@@ -38,13 +38,10 @@ header.navbar.navbar-fixed-top.transparent.wedding-header
   hr
 
   .row
-    .col-sm-4.text-center
-      br
-      br
-      br
-      i.fa.fa-map-marker.fa-4x
+    .col-md-8
+      #map-wrap
 
-    .col-sm-8
+    .col-md-4
       h2#place Місце
       p
         | Welcome to our wedding! Welcome to our wedding! Welcome to our wedding! Welcome to our wedding! Welcome to our wedding! Welcome to our wedding!
@@ -55,7 +52,7 @@ header.navbar.navbar-fixed-top.transparent.wedding-header
   hr
 
   .row
-    .col-sm-8
+    .col-md-4
       h2#time Час
       p
         | Welcome to our wedding! Welcome to our wedding! Welcome to our wedding! Welcome to our wedding! Welcome to our wedding! Welcome to our wedding!
@@ -63,11 +60,37 @@ header.navbar.navbar-fixed-top.transparent.wedding-header
         | Welcome to our wedding! Welcome to our wedding! Welcome to our wedding! Welcome to our wedding! Welcome to our wedding! Welcome to our wedding!
         | Welcome to our wedding! Welcome to our wedding! Welcome to our wedding! Welcome to our wedding! Welcome to our wedding! Welcome to our wedding!
 
-    .col-sm-4.text-center
-      br
-      br
-      br
-      i.fa.fa-calendar.fa-4x
+    .col-md-8
+      .calendar
+        .presentation.day-presentation
+          .current-day
+            ' Субота
+            br
+            ' 23 липня
+          .sub-heading Розкллад
+          .point-x
+            .time 16:00
+            .text
+              span Фуршет, фото-зона для гостей
+          .point-x
+            .time 16:30
+            .text
+              span Урочиста весільна церемонія
+          .point-x
+            .time 17:00
+            .text
+              span Святковий банкет
+        .presentation.month-presentation.hidden-xs
+          .year 2016
+          .months-wrap
+            - %w[січ лют бер кві тра чер лип сер вер жов лис гру].each do |month|
+              .month class="#{'current' if month == 'лип'}" = month
+          .weeks-days-wrap
+            - %w[пн вт ср чт пт сб нд].map do |week_day|
+              .week-day = week_day
+          .days-wrap
+            - (Date.new(2016, 06, 27)..Date.new(2016, 07, 31)).map do |date|
+              .day class="#{'inactive' if date.month != 7} #{'current' if date.day == 23}" = date.day
 
 footer
   .container
