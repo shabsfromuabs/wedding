@@ -3,7 +3,7 @@ html
   head
     base href="/"
     meta charset="utf-8"
-    title Весілля Артема і Наталі
+    title Весілля Наталі і Артема
     meta name="description" content="Весільний сайт Артема і Наталі"
     meta name="viewport" content="width=device-width, initial-scale=1"
     = csrf_meta_tags
@@ -20,21 +20,6 @@ html
   body
     = yield
 
-    / Async fonts and styles loading
-    script
-      | var createLink = function(link) {
-      |   var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = link;
-      |   document.head.appendChild(l);
-      | };
-      | var registerLink = function(link) {
-      |   var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
-      |   raf ? raf(function() { createLink(link); }) : window.addEventListener('load', function() { createLink(link); });
-      | };
-      | window.onload = function() {
-      |   registerLink('//fonts.googleapis.com/css?family=RobotoDraft:100,300,400,500,700');
-      |   registerLink('//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
-      | };
-
     script src="//code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"
     = javascript_include_tag 'application'
-    script async="" defer=""src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9RZ0vIGrlqro5dshfjmRlfpNHPFQwl0E&callback=initMap"
+    script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9RZ0vIGrlqro5dshfjmRlfpNHPFQwl0E&callback=initMap"

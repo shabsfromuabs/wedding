@@ -21,13 +21,22 @@ header.navbar.navbar-fixed-top.transparent.wedding-header
       source src="//d2gkycvwxvff5i.cloudfront.net/harri_nyc_v2.mp4" type="video/mp4"
       = image_tag 'photo.jpg'
 
-  .container
-    h1 Ми одружуємося
-    p 23 липня 2016 року
+  .container.countdown
+    h1.title.feature Ми одружуємося
+    h1.title.today Ми одружуємося
+    h1.title.past Ми одружилися
+    p
+      span.prefix.feature> через
+      span.days.count>
+      span.days.suffix>
+      span.prefix.past тому
 
   .scroll-down
+  .toggle-video
+    i.fa.fa-play
+    .pause
 
-.container
+.container.main-content
   .container-title
     | Дорогі друзі!
 
@@ -94,6 +103,4 @@ header.navbar.navbar-fixed-top.transparent.wedding-header
 
 footer
   .container
-    p Welcome to our wedding!
-    p Welcome to our wedding!
-    p Welcome to our wedding!
+    = image_tag 'logo-light.svg', class: 'logo'

@@ -1,0 +1,35 @@
+var map, marker;
+var win = $(window);
+win.bind('scroll', setMapMarker);
+
+function initMap() {
+  var coordinates = {lat: 50.914034, lng: 34.753893};
+
+  map = new google.maps.Map(document.getElementById('map-wrap'), {
+    center: coordinates,
+    zoom: 15,
+    mapTypeControl: false
+  });
+
+  marker = new google.maps.Marker({
+    position: coordinates,
+    title: 'Ресторан "Порт Рояль"',
+    animation: google.maps.Animation.DROP,
+    icon: '<%= asset_path('map-marker.png') %>'
+  });
+
+  setMapMarker();
+}
+
+function setMapMarker() {
+  if (map && win.height() + win.scrollTop() > $('#map-wrap').offset().top + 200) {
+    setTimeout(function () {
+      var img = new Image();
+      img.onload = function() {
+        marker.setMap(map);
+      };
+      img.src = '<%= asset_path('map-marker.png') %>';
+    }, 500);
+    win.unbind('scroll', setMapMarker);
+  }
+}
