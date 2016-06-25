@@ -1,6 +1,6 @@
 footer {
   background: #333;
-  padding: 50px 0;
+  padding: 50px 0 20px 0;
   color: $pink;
   overflow: hidden;
   position: relative;
@@ -15,7 +15,31 @@ footer {
     box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.2);
   }
 
-  .logo {
-    width: 200px;
+  .footer-wrap {
+    height: 100px;
+    position: relative;
+    padding-left: 125px;
+
+    .logo {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      left: 0;
+      top: 0;
+      background: asset_url('logo-light.svg') no-repeat top left;
+      background-size: contain;
+    }
+
+    .title {
+      font-size: 20px;
+      width: 140px;
+    }
+
+    .copy {
+      font-size: 12px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
   }
 }

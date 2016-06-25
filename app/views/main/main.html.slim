@@ -2,8 +2,7 @@ header.navbar.navbar-fixed-top.transparent.wedding-header
   .container
     .navbar-header
       a.navbar-brand.scroll-link(href="#")
-        = image_tag 'logo-light.svg', class: 'visible-on-transparent'
-        = image_tag 'logo-dark.svg', class: 'visible-on-white'
+        .logo
         span Артем і Наталя
 
     nav.collapse.navbar-collapse
@@ -107,4 +106,7 @@ header.navbar.navbar-fixed-top.transparent.wedding-header
 
 footer
   .container
-    = image_tag 'logo-light.svg', class: 'logo'
+    .footer-wrap
+      .logo.pull-left
+      .title Весілля Наталі та Артема
+      .copy © 2016

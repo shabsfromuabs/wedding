@@ -1,0 +1,15 @@
+html {
+  &[data-useragent*='Trident'], &[data-useragent*='MSIE 10'], &[data-useragent*='MSIE 9'] {
+    .navbar.wedding-header .navbar-brand .logo {
+      background-image: asset_url('logo30.png') !important;
+    }
+
+    footer {
+      .footer-wrap {
+        .logo {
+          background-image: asset_url('logo100.png');
+        }
+      }
+    }
+  }
+}
