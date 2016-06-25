@@ -1,8 +1,7 @@
 $(function() {
   var targetDate = new Date(2016, 7 - 1, 23);
   var target = targetDate.getTime();
-  //var currentDate = new Date();
-  var currentDate = new Date(2016, 7 - 1, 1, 19, 30);
+  var currentDate = new Date();
   var current = currentDate.getTime();
   var diff = target - current;
   var daysLeft = Math.ceil(diff / (1000 * 60 * 60 * 24));
