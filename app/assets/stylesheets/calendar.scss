@@ -30,6 +30,10 @@
       font-weight: 100;
       text-transform: uppercase;
       margin-bottom: 40px;
+
+      @media (max-width: 767px) {
+        font-size: 40px;
+      }
     }
 
     .sub-heading {

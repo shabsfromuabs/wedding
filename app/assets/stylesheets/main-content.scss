@@ -33,6 +33,12 @@
     }
   }
 
+  @media (min-width: 992px) {
+    .pull-right-md {
+      float: right;
+    }
+  }
+
   #map-wrap {
     height: 400px;
     box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
@@ -41,6 +47,11 @@
 
   hr {
     margin: 50px 0;
+
+
+    @media (max-width: 767px) {
+      margin: 35px 0;
+    }
   }
 
   h2 {

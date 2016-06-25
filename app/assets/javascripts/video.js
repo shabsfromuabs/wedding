@@ -6,8 +6,8 @@ function setVideoPlayback () {
 
   $(window).load(function () {
     if(win.width() >= 768) {
-      $('#cover-video')[0].play();
-      setVideoToggleClass('pause');
+      //$('#cover-video')[0].play();
+      //setVideoToggleClass('pause');
     }
   });
 
