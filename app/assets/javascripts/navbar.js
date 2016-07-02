@@ -1,10 +1,16 @@
-var navbar = $('.navbar');
+$(function () {
+  var win = $(window);
+  var navbar = $('.navbar');
 
-function setNavBarClass() {
-  if ($(window).scrollTop() > 100) {
-    navbar.addClass('white');
+  setNavBarClass();
+  win.scroll(setNavBarClass);
+
+  function setNavBarClass() {
+    if ($(window).scrollTop() > 100) {
+      navbar.addClass('white');
+    }
+    else {
+      navbar.removeClass('white');
+    }
   }
-  else {
-    navbar.removeClass('white');
-  }
-}
+});

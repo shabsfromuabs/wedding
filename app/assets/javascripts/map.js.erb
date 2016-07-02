@@ -1,6 +1,8 @@
+$(function() {
+  $(window).bind('scroll', setMapMarker);
+});
+
 var map, marker;
-var win = $(window);
-win.bind('scroll', setMapMarker);
 
 function initMap() {
   var coordinates = {lat: 50.914034, lng: 34.753893};
@@ -8,7 +10,8 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map-wrap'), {
     center: coordinates,
     zoom: 15,
-    mapTypeControl: false
+    mapTypeControl: false,
+    scrollwheel: $(window).width() >= 768
   });
 
   marker = new google.maps.Marker({
@@ -22,6 +25,7 @@ function initMap() {
 }
 
 function setMapMarker() {
+  var win = $(window);
   if (map && win.height() + win.scrollTop() > $('#map-wrap').offset().top + 200) {
     setTimeout(function () {
       var img = new Image();
