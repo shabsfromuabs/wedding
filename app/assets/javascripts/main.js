@@ -34,17 +34,20 @@ $(function () {
     }
   }
 
-  function setVideoPlayback () {
+  function setVideoPlayback() {
     setVideoToggleClass('play');
 
     $(window).load(function () {
-      if(win.width() >= 768) {
-        $('#cover-video')[0].play();
+      if (win.width() >= 768) {
+        video.play();
         setVideoToggleClass('pause');
+      }
+      else {
+        video.src = '/uploads/video_360p.mp4';
       }
     });
 
-    videoToggle.click(function() {
+    videoToggle.click(function () {
       if (!!(video.currentTime > 0 && !video.paused && !video.ended && video.readyState > 2)) {
         video.pause();
         setVideoToggleClass('play');
